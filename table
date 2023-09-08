@@ -1,0 +1,18 @@
+import java.util.Scanner;
+public class Basic 
+{
+public static void main(String[] args) {
+	Scanner sc=new Scanner(System.in);
+	System.out.print("enter the table:");
+	int table=sc.nextInt();
+	System.out.print("enter the range:");
+	int a=sc.nextInt();
+	int i;
+	for(i=1;i<=a;i++)
+	{
+		int c=table*i;
+		System.out.println(table+"x"+i+"="+c);
+	}
+
+}
+}
