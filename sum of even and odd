@@ -1,0 +1,31 @@
+package ForLoop;
+
+import java.util.Scanner;
+public class EvenAndOdd {
+		public static void main(String[] args) {
+			Scanner sc=new Scanner(System.in);
+			int start=sc.nextInt();
+			int end=sc.nextInt();
+			int even=0,odd=0;
+			System.out.println();
+			for(int i=start;i<=end;i++)
+			{
+				if(i%2==0)
+				{
+					System.out.print(i+" ");
+					even+=i;
+				}
+			}
+			System.out.println();
+			for(int i=start;i<=end;i++)
+			{
+				if(i%2==1)
+				{
+					System.out.print(i+" ");
+					odd+=i;
+				}
+			}
+			System.out.println();
+			System.out.println("the sum:"+even+" "+odd);
+	}
+}
