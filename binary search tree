@@ -1,0 +1,107 @@
+class Node {
+    int data;
+    Node left;
+    Node right;
+
+    Node(int data) {
+        this.data = data;
+        this.left = null;
+        this.right = null;
+    }
+}
+
+class BST {
+    Node root;
+
+    void insert(int data) {
+        root = insertRecursive(root, data);
+    }
+
+    Node insertRecursive(Node current, int data) {
+        if (current == null) {
+            return new Node(data);
+        }
+
+        if (data <= current.data) {
+            current.left = insertRecursive(current.left, data);
+        } else {
+            current.right = insertRecursive(current.right, data);
+        }
+
+        return current;
+    }
+
+    Node search(int data) {
+        return searchRecursive(root, data);
+    }
+
+    Node searchRecursive(Node current, int data) {
+        if (current == null || current.data == data) {
+            return current;
+        }
+
+        if (data < current.data) {
+            return searchRecursive(current.left, data);
+        } else {
+            return searchRecursive(current.right, data);
+        }
+    }
+
+    void inorderTraversal(Node root) {
+        if (root != null) {
+            inorderTraversal(root.left);
+            System.out.print(root.data + " ");
+            inorderTraversal(root.right);
+        }
+    }
+
+    void preorderTraversal(Node root) {
+        if (root != null) {
+            System.out.print(root.data + " ");
+            preorderTraversal(root.left);
+            preorderTraversal(root.right);
+        }
+    }
+
+    void postorderTraversal(Node root) {
+        if (root != null) {
+            postorderTraversal(root.left);
+            postorderTraversal(root.right);
+            System.out.print(root.data + " ");
+        }
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        BST bst = new BST();
+
+        bst.insert(50);
+        bst.insert(30);
+        bst.insert(20);
+        bst.insert(40);
+        bst.insert(70);
+        bst.insert(60);
+        bst.insert(80);
+
+        System.out.print("In-order traversal: ");
+        bst.inorderTraversal(bst.root);
+        System.out.println();
+
+        System.out.print("Pre-order traversal: ");
+        bst.preorderTraversal(bst.root);
+        System.out.println();
+
+        System.out.print("Post-order traversal: ");
+        bst.postorderTraversal(bst.root);
+        System.out.println();
+
+        int searchData = 20;
+        Node searchResult = bst.search(searchData);
+        if (searchResult != null) {
+            System.out.println(searchData + " found in the binary tree.");
+        } else {
+            System.out.println(searchData + " not found in the binary tree.");
+        }
+    }
+}
