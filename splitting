@@ -1,0 +1,17 @@
+package WhileLoop;
+import java.util.Scanner;
+public class SplitingInt {
+public static void main(String[] args) {
+	Scanner sc=new Scanner(System.in);
+	
+	int num=sc.nextInt();
+	
+	while(num!=0)
+	{
+		int temp= num%10;
+		num/=10;
+		System.out.println(temp);
+    }
+	
+}
+}
