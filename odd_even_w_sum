@@ -1,0 +1,30 @@
+import java.util.Scanner; 
+public class Basicif 
+{
+	public static void main(String[] args)
+	{
+		Scanner dc=new Scanner(System.in);
+		int start=dc.nextInt();
+		int end=dc.nextInt();
+		int even=0,odd=0;
+		for(int i=start;i<=end;++i)
+		{
+			if(i%2==0)
+			{
+			System.out.print(i+" ");
+			even+=i;	  
+		    }
+		}
+		System.out.println();
+			for(int i=start;i<=end;++i)
+			{
+			 if(i%2==1)
+			{
+			System.out.print(i+" ");
+			odd=odd+i;
+			}
+	}
+		System.out.println("\n"+even+"\n"+odd);
+
+}
+}
