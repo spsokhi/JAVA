@@ -1,0 +1,86 @@
+class Node {
+    int data;
+    Node next;
+
+    Node(int data) {
+        this.data = data;
+        this.next = null;
+    }
+}
+
+class Queue {
+    Node front;
+    Node rear;
+
+    Queue() {
+        front = null;
+        rear = null;
+    }
+
+    boolean isEmpty() {
+        return front == null;
+    }
+
+    void enqueue(int data) {
+        Node newNode = new Node(data);
+        if (isEmpty()) {
+            front = newNode;
+            rear = newNode;
+        } else {
+            rear.next = newNode;
+            rear = newNode;
+        }
+        System.out.println("Enqueued element: " + data);
+    }
+
+    int dequeue() {
+        if (isEmpty()) {
+            System.out.println("Dequeue failed: Queue is empty");
+            return -1; // Returning -1 as an error value
+        }
+        int data = front.data;
+        front = front.next;
+        if (front == null) {
+            rear = null;
+        }
+        return data;
+    }
+
+    int peek() {
+        if (isEmpty()) {
+            System.out.println("Peek failed: Queue is empty");
+            return -1; // Returning -1 as an error value
+        }
+        return front.data;
+    }
+
+    void display() {
+        if (isEmpty()) {
+            System.out.println("Queue is empty");
+            return;
+        }
+        Node temp = front;
+        System.out.print("Queue elements are: ");
+        while (temp != null) {
+            System.out.print(temp.data + " ");
+            temp = temp.next;
+        }
+        System.out.println();
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Queue queue = new Queue();
+
+        queue.enqueue(1);
+        queue.enqueue(2);
+        queue.enqueue(3);
+
+        queue.display();
+
+        System.out.println("Dequeued element: " + queue.dequeue());
+
+        queue.display();
+    }
+}
