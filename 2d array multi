@@ -1,0 +1,56 @@
+package TwoDarrays;
+import java.util.Scanner;
+public class Multi {
+public static void main(String[] args) {
+	Scanner sc=new Scanner(System.in);
+	System.out.print("enter the rows:");
+	int rows=sc.nextInt();
+	System.out.print("enter the column:");
+	int colum=sc.nextInt();
+	System.out.println();
+	int[][] arr=new int[rows][colum];
+	int[][] arr1=new int[rows][colum];
+	int[][] mul=new int[rows][colum];
+	
+	for(int i=0;i<arr.length;i++)
+	{
+		for(int j=0;j<arr.length;j++)
+		{
+			System.out.print("enter the first matrix element:");
+			arr[i][j]=sc.nextInt();
+		}
+	}
+	System.out.println();
+	for(int i=0;i<arr.length;i++)
+	{
+		for(int j=0;j<arr.length;j++)
+		{
+			System.out.print(arr[i][j]);
+		}
+		System.out.println();
+	}
+	System.out.println();
+	for(int i=0;i<arr.length;i++)
+	{
+		for(int j=0;j<arr.length;j++)
+		{
+			System.out.print("enter the secound matrix element:");
+			arr1[i][j]=sc.nextInt();
+		}
+	}
+	System.out.println();
+	for(int i=0;i<arr.length;i++)
+	{
+		for(int j=0;j<arr.length;j++)
+		{
+			mul[i][j]=0;
+			for(int k=0;k<arr.length;k++)
+			{
+			mul[i][j]=mul[i][j]+(arr[i][k]*arr[k][j]);
+			}
+			System.out.print(mul[i][j]+" ");
+		}
+		System.out.println();
+	}
+}
+}
