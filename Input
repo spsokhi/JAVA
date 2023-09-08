@@ -1,0 +1,19 @@
+mport java.util.Scanner;
+public class InputInt 
+{
+	public static void main(String[] args) {
+		Scanner sc=new Scanner(System.in);
+		int a=sc.nextInt();
+		float b=sc.nextFloat();
+		double c=sc.nextDouble();
+		byte d=sc.nextByte();
+		short e=sc.nextShort();
+		long f=sc.nextLong();
+		System.out.println("int="+a);
+		System.out.println("float="+b);
+		System.out.println("double="+c);
+		System.out.println("byte="+d);
+		System.out.println("short="+e);
+		System.out.println("long="+f);			
+	}
+}
