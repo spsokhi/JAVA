@@ -1,0 +1,28 @@
+package Inheritance;
+class Parent
+{
+	Parent()
+	{
+		System.out.println("Parent constructor");
+	}
+	void display()
+	{
+		System.out.println("parent class");
+	}
+}
+public class Single extends Parent
+{
+	Single()
+	{
+		System.out.println("child constructor");
+	}
+	void disp()
+	{
+		System.out.println("child class");
+	}
+	public static void main(String[] args) {	
+	Single si=new Single();
+	si.display();
+	si.disp();
+}
+}
