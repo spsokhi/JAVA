@@ -1,0 +1,34 @@
+import java.util.Scanner;
+public class Basic
+{
+       String  name;
+       int age;
+       static String college="vit";
+     
+        Basic(String name,int age)
+        {
+        	this.name=name;
+        	this.age=age;
+        }
+        static void out()
+        {
+        	college="paavai";
+        }
+       void display()
+       {
+    	   //System.out.println(name+" "+age);
+    	   System.out.println(name+" "+age+" "+college);
+       }
+       public static void main(String[] args) 
+       {
+    	Basic.out();
+		Basic ba=new Basic("manoj",9);
+		Basic ba1=new Basic("guru",6);
+	    ba.display();
+	    ba1.display();
+	}
+       static
+       {
+    	   System.out.println("hiiiiiiii");
+       }
+}
