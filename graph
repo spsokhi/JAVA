@@ -1,0 +1,63 @@
+class Node {
+    int vertexNum;
+    Node next;
+
+    Node(int vertexNum) {
+        this.vertexNum = vertexNum;
+        this.next = null;
+    }
+}
+
+class List {
+    Node head;
+
+    List() {
+        this.head = null;
+    }
+}
+
+public class Main {
+    static final int maxNode = 4;
+    static List[] adjList = new List[maxNode];
+
+    public static void addNode(int s, int d) {
+        Node dest = new Node(d);
+
+        if (adjList[s] == null) {
+            Node src = new Node(s);
+            adjList[s] = new List();
+            adjList[s].head = src;
+        }
+
+        Node tmp = adjList[s].head;
+        while (tmp.next != null) {
+            tmp = tmp.next;
+        }
+        tmp.next = dest;
+    }
+
+    public static void printList() {
+        for (int i = 0; i < maxNode; ++i) {
+            Node p = adjList[i].head;
+            System.out.print("Adjacency list for vertex " + i + ": ");
+
+            while (p != null) {
+                System.out.print(p.vertexNum + " ");
+                p = p.next;
+            }
+            System.out.println();
+        }
+    }
+
+    public static void main(String[] args) {
+        for (int i = 0; i < maxNode; i++) {
+            adjList[i] = new List();
+        }
+
+        addNode(0, 1);
+        addNode(0, 3);
+        addNode(1, 2);
+
+        printList();
+    }
+}
