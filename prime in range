@@ -1,0 +1,33 @@
+package ForLoop;
+import java.util.Scanner;
+public class PrimeInRange 
+{
+	public static void main(String[] args) 
+	{
+		Scanner sc=new Scanner(System.in);
+		System.out.print("enter the starting num:");
+		int ini=sc.nextInt();
+		System.out.print("enter the end num:");
+		int end=sc.nextInt();
+		int factor;
+		
+		for(int i=ini;i<=end;i++)
+		{
+			factor=0;
+			for(int j=2;j<=i;j++)
+			{
+				if(i%j==0)
+				{
+					factor++;
+				}
+			}
+			if(factor==1)
+			{
+			System.out.println(i);
+			}
+		}
+		
+		
+	}
+
+}
