@@ -1,0 +1,32 @@
+package WhileLoop;
+import java.util.Scanner;
+public class Amstrong {
+	public static void main(String[] args) 
+	{
+		Scanner sc=new Scanner(System.in);
+		int num=sc.nextInt();
+		int b,temp,amg=0,count=0;
+		b=num;
+		while(num!=0)
+		{
+			num/=10;
+			count++;
+		}
+		num=b;
+		while(num!=0)
+		{
+			temp=num%10;
+			amg+=(int)Math.pow(temp, count);
+			num/=10;
+		}
+		if(b==amg)
+		{
+			System.out.println("amstrong");
+		}
+		else
+		{
+			System.out.println("not amstrong");
+		}
+		
+	}
+}
