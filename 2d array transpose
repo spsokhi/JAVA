@@ -1,0 +1,55 @@
+package TwoDarrays;
+
+import java.util.Scanner;
+
+public class Transverse {
+	public static void main(String[] args) {
+		
+	
+	Scanner sc=new Scanner(System.in);
+	int row=sc.nextInt();
+	int colum=sc.nextInt();
+    int[][] arr=new int[row][colum];
+    int[][] tra=new int[row][colum];
+    System.out.println();
+    for(int i=0;i<row;i++)
+    {
+    	for(int j=0;j<colum;j++)
+    	{
+    	  System.out.print("enter the first array element"+" "+(i)+":");
+    		arr[i][j]=sc.nextInt();
+    	}
+    	System.out.println();
+    }
+    System.out.println();
+    System.out.println("matrix before transpose");
+    for(int i=0;i<row;i++)
+    {
+    	for(int j=0;j<colum;j++)
+    	{
+    		System.out.print(arr[i][j]+" ");
+    	}
+    	System.out.println();
+    }  
+    System.out.println();
+    
+    for(int i=0;i<row;i++)
+    {
+    	for(int j=0;j<colum;j++)
+    	{
+    	  tra[i][j]=arr[j][i];
+    	}
+    	System.out.println();
+    }
+    //System.out.println();
+    System.out.println("matrix after transpose");
+    for(int i=0;i<row;i++)
+    {
+    	for(int j=0;j<colum;j++)
+    	{
+    		System.out.print(tra[i][j]+" ");
+    	}
+    	System.out.println();
+    }  
+}  
+}
